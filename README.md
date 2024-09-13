@@ -1,5 +1,3 @@
-# Run
-
 This is PoC project to show how to support SAML on a SonarQube instance exposed over a non-standard HTTPS port using a reverse proxy.
 
 This project has a simple Node.js server that will respond with the request body it receives.
