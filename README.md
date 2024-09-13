@@ -17,6 +17,6 @@ $ curl -X POST \
   -d '{"url": "https://test.com:8443/oauth2/callback/saml"}'
 ```
 
-Or use `test.http` with the [HTTP Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension.
+Or use `test.http` with the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension.
 
 See that the custom port :8443 has been removed from the payload, making the ACS valid for the SonarQube behind a proxy.
