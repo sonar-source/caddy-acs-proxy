@@ -1,0 +1,27 @@
+services:
+  caddy:
+    build: .
+    ports:
+      - "80:80"
+      - "8443:8443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      one:
+
+  node:
+    image: node:alpine
+    ports:
+      - "81:3000"
+    volumes:
+      - ./app:/app
+    environment:
+      - PORT=3000
+    working_dir: /app
+    entrypoint: npm
+    command: start
+    networks:
+      one:
+
+networks:
+  one:

@@ -1,0 +1,17 @@
+{
+  order replace after encode
+}
+
+:80 {
+  respond "Hello world!"
+}
+
+:8443 {
+  handle /oauth2/callback/saml {
+    replace {
+      ":8443/oauth2/callback/saml" "/oauth2/callback/saml"
+    }
+  }
+
+  reverse_proxy node:3000
+}
